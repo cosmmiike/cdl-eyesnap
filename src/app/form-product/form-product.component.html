@@ -1,51 +1,53 @@
 <section block="form-product">
   <h1 elem="title">Nouveau produit</h1>
 
-  <form block="form">
-    <div elem="leftside">
-      <label elem="label">Nom de produit
-        <input elem="input" type="text">
-      </label>
+  <form block="form" [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+    <div formGroupName="product" novalidate>
+      <div elem="leftside">
+        <label elem="label">Nom de produit
+          <input elem="input" type="text">
+        </label>
 
-      <label elem="label">Marque
-        <input elem="input" type="text">
-      </label>
+        <label elem="label">Marque
+          <input elem="input" type="text">
+        </label>
 
-      <label elem="label">ID de produit
-        <input elem="input" type="text">
-      </label>
+        <label elem="label">ID de produit
+          <input elem="input" type="text">
+        </label>
 
-      <label elem="label">Code barre
-        <input elem="input" type="text">
-      </label>
+        <label elem="label">Code barre
+          <input elem="input" type="text">
+        </label>
 
-      <label elem="label">Lien web
-        <input elem="input" type="text">
-      </label>
+        <label elem="label">Lien web
+          <input elem="input" type="text">
+        </label>
 
-      <label elem="label">Couleur
-        <input elem="input" type="text">
-      </label>
+        <label elem="label">Couleur
+          <input elem="input" type="text">
+        </label>
+      </div>
+
+      <div elem="rightside">
+        <label elem="label" mod="image">Images
+          <div elem="wrap">
+            <input elem="input" mod="image" type="file" (change)="onFileChanged($event)">
+            <button elem="button-add-image" (click)="fileInput.click()">Choisir une image</button>
+          </div>
+        </label>
+
+        <label elem="label">Mots-clès
+          <textarea elem="input" mod="textarea" type="text"></textarea>
+        </label>
+
+        <label elem="label">Déscription
+          <textarea elem="input" mod="textarea" type="text"></textarea>
+        </label>
+      </div>
     </div>
 
-    <div elem="rightside">
-      <label elem="label" mod="image">Images
-        <div elem="wrap">
-          <input elem="input" mod="image" type="image">
-          <button elem="button-add-image">Choisir une image</button>
-        </div>
-      </label>
-
-      <label elem="label">Mots-clès
-        <textarea elem="input" mod="textarea" type="text"></textarea>
-      </label>
-
-      <label elem="label">Déscription
-        <textarea elem="input" mod="textarea" type="text"></textarea>
-      </label>
-    </div>
-
-    <button elem="button" mod="submit" type="submit">Terminé</button>
-    <button elem="button" mod="reset" type="reset">Réinitialiser</button>
+    <button elem="button" mod="submit" type="submit" (click)="onSubmit()">Terminé</button>
+    <button elem="button" mod="reset" type="reset" (click)="revert()">Réinitialiser</button>
   </form>
 </section>
