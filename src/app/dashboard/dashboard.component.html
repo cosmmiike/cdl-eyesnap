@@ -1,3 +1,124 @@
 <section block="dashboard">
-  <h1 elem="title">Dashboard</h1>
+  <div elem="header">
+    <div elem="wrap-picture">
+      <img elem="header-picture" src="{{product.picture}}" alt="{{product.name}}">
+    </div>
+    <div elem="wrap-title">
+      <h1 elem="title">{{product.name}}</h1>
+      <p elem="brand">{{product.brand}}</p>
+    </div>
+  </div>
+
+  <div elem="filters">
+    [ Recherche ] [ Filtres ]
+  </div>
+
+  <div elem="wrap-tabs">
+    <ul elem="tabs-list">
+      <li elem="tabs-item" [class.active]="viewMode == 'tab1'" rel="tab1" (click)="viewMode ='tab1'">Marketing</li>
+      <li elem="tabs-item" [class.active]="viewMode == 'tab2'" rel="tab2" (click)="viewMode ='tab2'">Logistique</li>
+    </ul>
+  </div>
+
+  <article block="content" [ngSwitch]="viewMode">
+    <div id="tab1" elem="marketing" *ngSwitchCase="'tab1'">
+
+      <div elem="leftside">
+        <div elem="wide-block">
+          <h2 elem="title">Interactions</h2>
+            <img src="assets/img/temp/graphs/graph-1.png" alt="" width="90%">
+        </div>
+
+        <div elem="wide-block">
+          <h2 elem="title">Influenceurs</h2>
+          <div elem="wrap">
+            <img src="assets/img/temp/graphs/graph-9.png" alt="" width="90%">
+          </div>
+        </div>
+
+        <div elem="wide-block">
+          <h2 elem="title">Publications recentes</h2>
+          <div elem="wrap">
+
+          </div>
+        </div>
+      </div>
+
+      <div elem="rightside">
+        <div elem="narrow-block">
+          <h2 elem="title">Tonalité</h2>
+          <div elem="wrap">
+            <img src="assets/img/temp/graphs/graph-2.png" alt="">
+          </div>
+        </div>
+
+        <div elem="narrow-block">
+          <h2 elem="title">Mentions</h2>
+          <div elem="wrap">
+            <img src="assets/img/temp/graphs/graph-3.png" alt="">
+          </div>
+        </div>
+
+        <div elem="narrow-block">
+          <h2 elem="title">Age et sexe</h2>
+          <div elem="wrap">
+            <img src="assets/img/temp/graphs/graph-7.png" alt="">
+          </div>
+        </div>
+
+        <div elem="narrow-block">
+          <h2 elem="title">Localisation</h2>
+          <div elem="wrap">
+            <img src="assets/img/temp/graphs/graph-6.png" alt="">
+          </div>
+        </div>
+
+        <div elem="narrow-block">
+          <h2 elem="title">Mots-clès</h2>
+          <div elem="wrap">
+            <img src="assets/img/temp/graphs/graph-4.png" alt="">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="tab2" elem="logistic" *ngSwitchCase="'tab2'">
+
+      <div elem="leftside">
+        <div elem="wide-block">
+          <h2 elem="title">Localisation</h2>
+          <div elem="wrap">
+            <img src="assets/img/temp/graphs/graph-8.png" alt="" width="90%">
+          </div>
+        </div>
+
+        <div elem="wide-block">
+          <h2 elem="title">Produits concurrents</h2>
+          <div elem="wrap">
+            <img src="assets/img/temp/graphs/graph-10.png" alt="" width="90%">
+          </div>
+        </div>
+
+      </div>
+
+      <div elem="rightside">
+        <div elem="narrow-block">
+          <h2 elem="title">Pays</h2>
+          <div elem="wrap">
+            <img src="assets/img/temp/graphs/graph-6.png" alt="">
+          </div>
+        </div>
+
+        <div elem="narrow-block">
+          <h2 elem="title">Villes</h2>
+          <div elem="wrap">
+            <img src="assets/img/temp/graphs/graph-6.png" alt="">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </article>
 </section>

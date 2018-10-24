@@ -1,0 +1,132 @@
+$bg-color: #FFFFFF
+$primary-color: #00BCD4
+$low-contrast-color: #F0F0F0
+$low-contrast-color-1: #DDDDDD
+$low-contrast-color-2: #F8F8F8
+$contrast-color-1: #808080
+$contrast-color: #404040
+$contrast-color-2: #303030
+$contrast-color-3: #202020
+$green: #2AC18C
+$font-stack: 'Open Sans', 'Helvetica Neue', 'Arial', sans-serif
+
+
+.form-product__title
+  display: block
+  margin: 0
+  margin-bottom: 25px
+  padding: 0
+  font-weight: 700
+  font-size: 32px
+  line-height: 38px
+
+.form
+  display: block
+
+  &__leftside,
+  &__rightside
+    display: block
+    float: left
+    width: 460px
+    margin-right: 70px
+    // outline: 1px solid red
+
+  &__rightside
+    margin: 0
+
+  &__label
+    display: block
+    margin-bottom: 15px
+    font-size: 12px
+    color: $contrast-color-1
+
+  &__input
+    display: block
+    width: 100%
+    height: 40px
+    padding: 0 15px
+    font-size: 14px
+    font-weight: 600
+    border: none
+    border-radius: 20px
+    background-color: $low-contrast-color-2
+
+    &:focus
+      background-color: $low-contrast-color
+      outline: none
+
+    &--textarea
+      height: 100px
+      padding: 15px
+
+    &--image
+      width: 90px
+      height: 110px
+      padding: 0
+      margin-right: 10px
+      font-size: 0
+      border-radius: 8px
+
+  &__wrap
+    display: flex
+    flex-direction: row
+
+  &__button-add-image
+    position: relative
+    font-size: 0
+    margin-right: 10px
+    margin-bottom: 10px
+    height: 50px
+    width: 50px
+    border: none
+    border-radius: 8px
+    background-color: $green
+    opacity: 0.5
+    transition: 0.2s
+
+    &::before
+      content: "+"
+      height: 50px
+      width: 50px
+      position: absolute
+      top: 0
+      left: 0
+      font-size: 40px
+      line-height: 45px
+      margin: 0
+      padding: 0
+      color: $bg-color
+      font-weight: 400
+
+    &:hover
+      cursor: pointer
+      opacity: 1
+      transition: 0.2s
+
+  &__button
+    margin: 10px 15px 10px 0
+    padding: 10px 20px
+    font-size: 14px
+    border: none
+    border-radius: 20px
+    color: $contrast-color
+    background-color: $low-contrast-color-1
+    text-transform: uppercase
+    font-weight: 600
+
+    &:hover
+      cursor: pointer
+
+    &--submit
+      color: $bg-color
+      background-color: $primary-color
+
+      &:hover
+        background-color: #00ACC4
+
+    &--reset
+      color: $contrast-color-1
+      background: none
+
+      &:hover
+        background-color: $low-contrast-color

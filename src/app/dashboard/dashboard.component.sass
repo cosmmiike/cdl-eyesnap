@@ -1,6 +1,8 @@
 $bg-color: #FFFFFF
 $primary-color: #00BCD4
-$low-contrast-color: #DDDDDD
+$low-contrast-color: #F0F0F0
+$low-contrast-color-1: #DDDDDD
+$contrast-color-1: #808080
 $contrast-color: #404040
 $contrast-color-2: #303030
 $contrast-color-3: #202020
@@ -10,16 +12,146 @@ $font-stack: 'Open Sans', 'Helvetica Neue', 'Arial', sans-serif
   position: absolute
   overflow: scroll
   top: 0
-  left: 260px
+  left: 280px
   z-index: 40
   display: flex
   flex-direction: column
-  min-width: 1120px
-  max-width: 1120px
+  min-width: 1100px
+  max-width: 1100px
   min-height: 100vh
   max-height: 100vh
   margin: 0
   padding: 0 20px
+  background-color: $bg-color
+
+  &__header
+    display: block
+    margin-top: 10px
+    padding: 20px 0
+
+  &__wrap-picture
+    display: block
+    float: left
+    width: 60px
+    height: 60px
+    margin-right: 20px
+    text-align: center
+    border-radius: 10px
+
+  &__header-picture
+    max-width: 60px
+    max-height: 60px
+
+  &__wrap-title
+    display: block
+    float: left
+    width: 930px
+    margin: 0
+    padding: 0
 
   &__title
     display: block
+    margin: 0
+    margin-bottom: 5px
+    padding: 0
+    font-weight: 700
+    font-size: 32px
+    line-height: 38px
+
+  &__brand
+    display: block
+    margin: 0
+    padding: 0
+    color: $contrast-color-1
+    text-transform: uppercase
+
+  &__filters
+    display: block
+    margin: 0
+    padding: 20px 0
+
+  &__wrap-tabs
+    display: block
+    padding: 20px 0
+    padding-bottom: 10px
+    margin-bottom: 20px
+
+  &__tabs-list
+    display: block
+    margin: 0
+    padding: 0
+    list-style: none
+    border-bottom: 1px solid $low-contrast-color-1
+    user-select: none
+
+  &__tabs-item
+    display: inline-block
+    margin: 0
+    padding: 0 20px
+    line-height: 40px
+    text-transform: uppercase
+    transition: 0.2s
+    color: $contrast-color-1
+
+    &:hover
+      cursor: pointer
+      color: $primary-color
+      transition: 0.2s
+
+    &.active
+      font-weight: 600
+      color: $primary-color
+      transition: 0
+      border-bottom: 3px solid $primary-color
+
+      &:hover
+        transform: 0.2s
+        cursor: default
+
+.content
+  display: block
+  width: 1100px
+
+  &__leftside
+    width: 700px
+    float: left
+
+  &__rightside
+    width: 350px
+    float: right
+
+  &__wide-block
+    display: block
+    width: 700px
+    margin-bottom: 30px
+
+    &__wrap
+      width: 680px
+
+  &__narrow-block
+    display: block
+    width: 350px
+    margin-bottom: 30px
+
+    &__wrap
+      width: 300px
+
+  &__title
+    display: block
+    margin: 0
+    margin-bottom: 25px
+    padding: 0
+    font-weight: 700
+    font-size: 24px
+
+  &__wrap
+    display: block
+    min-height: 100px
+    background-color: $bg-color
+    border-radius: 15px
+    box-shadow: 0 0 30px 3px rgba(0, 0, 0, 0.05)
+    padding: 20px
+    text-align: center
+
+    img
+      max-width: 90%

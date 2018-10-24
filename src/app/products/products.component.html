@@ -1,3 +1,53 @@
 <section block="products">
   <h1 elem="title">Produits</h1>
+
+  <div elem="filters">
+    [ Filtres ]
+  </div>
+
+  <button elem="create" (click)="openModal('product-form')">Créer un nouveau produit</button>
+
+  <ul elem="list">
+    <li block="product" id="product--{{product._id}}" *ngFor="let product of products">
+      <a elem="wrap" href="dashboard/{{product._id}}">
+        <div elem="wrap-picture">
+          <img elem="picture" src={{product.picture}}>
+        </div>
+        <div elem="wrap-title">
+          <p elem="name">{{product.name}}</p>
+          <p elem="brand">{{product.brand}}</p>
+        </div>
+        <div elem="wrap-metrics">
+          <div elem="metrics">
+            <p elem="metrics-name">Engagement</p>
+            <p elem="metrics-value">12 382</p>
+          </div>
+          <div elem="metrics">
+            <p elem="metrics-name">Reach</p>
+            <p elem="metrics-value">19 104</p>
+          </div>
+        </div>
+      </a>
+      <div block="options">
+        <div elem="label">Options</div>
+        <!-- <ul elem="list">
+            <li elem="item">Analyser</li>
+            <li elem="item" routerLink="{{product._id}}">Modifier</li>
+            <li elem="item" mod="delete">Supprimer</li>
+        </ul> -->
+      </div>
+    </li>
+  </ul>
+
+
 </section>
+
+<app-modal block="product-form" id="product-form">
+  <div elem="wrap">
+    <div elem="window">
+      <app-form-product></app-form-product>
+      <button elem="close" (click)="closeModal('product-form');">Close</button>
+    </div>
+  </div>
+  <div elem="background"></div>
+</app-modal>

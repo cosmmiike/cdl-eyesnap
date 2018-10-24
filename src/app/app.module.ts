@@ -6,6 +6,8 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { SidetipsComponent } from './sidetips/sidetips.component';
+import { ModalComponent } from './modal/modal.component';
+import { FormProductComponent } from './form-product/form-product.component';
 
 
 @NgModule({
@@ -13,7 +15,9 @@ import { SidetipsComponent } from './sidetips/sidetips.component';
     AppComponent,
     SidenavComponent,
     routingComponents,
-    SidetipsComponent
+    SidetipsComponent,
+    ModalComponent,
+    FormProductComponent
   ],
   imports: [
     BrowserModule,

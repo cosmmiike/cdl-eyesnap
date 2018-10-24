@@ -1,0 +1,26 @@
+<section block="home">
+  <h1 elem="title">Accueil</h1>
+  <ul class="products">
+    <li>
+      <button (click)="openModal('custom-modal-1')">Add new product</button>
+
+    </li>
+
+    <li *ngFor="let product of products">
+      <a routerLink="../dashboard/{{product._id}}">
+        <p><span class="badge"> Name:</span> {{product.name}}</p>
+        <p><span class="badge"> Brand:</span> {{product.brand}}</p>
+      </a>
+    </li>
+  </ul>
+
+  <app-modal id="custom-modal-1">
+    <div class="modal">
+      <div class="modal-body">
+        <app-form-product></app-form-product>
+        <button (click)="closeModal('custom-modal-1');">Close</button>
+      </div>
+    </div>
+    <div class="modal-background"></div>
+  </app-modal>
+</section>

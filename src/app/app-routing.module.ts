@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ComparisonComponent } from './comparison/comparison.component';
@@ -9,12 +10,13 @@ import { TrendsComponent } from './trends/trends.component';
 import { CompetitorsComponent } from './competitors/competitors.component';
 import { ReportsComponent } from './reports/reports.component';
 import { SettingsComponent } from './settings/settings.component';
-import { HomepageComponent } from './homepage/homepage.component';
 
 const routes: Routes = [
-  { path: 'homepage', component: HomepageComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard/:id', component: DashboardComponent },
   { path: 'comparison', component: ComparisonComponent },
   { path: 'influencers', component: InfluencersComponent },
   { path: 'trends', component: TrendsComponent },
@@ -29,4 +31,4 @@ const routes: Routes = [
 })
 
 export class AppRoutingModule { }
-export const routingComponents = [HomepageComponent, ProductsComponent, DashboardComponent, ComparisonComponent, InfluencersComponent, TrendsComponent, CompetitorsComponent, ReportsComponent, SettingsComponent]
+export const routingComponents = [HomeComponent, ProductsComponent, DashboardComponent, ComparisonComponent, InfluencersComponent, TrendsComponent, CompetitorsComponent, ReportsComponent, SettingsComponent]

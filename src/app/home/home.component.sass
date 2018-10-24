@@ -1,0 +1,61 @@
+$bg-color: #FFFFFF
+$primary-color: #00BCD4
+$low-contrast-color: #DDDDDD
+$contrast-color: #404040
+$contrast-color-2: #303030
+$contrast-color-3: #202020
+$font-stack: 'Open Sans', 'Helvetica Neue', 'Arial', sans-serif
+
+.home
+  position: absolute
+  overflow: scroll
+  top: 0
+  left: 280px
+  z-index: 40
+  display: flex
+  flex-direction: column
+  min-width: 1100px
+  max-width: 1100px
+  min-height: 100vh
+  max-height: 100vh
+  margin: 0
+  padding: 0 20px
+  background-color: $bg-color
+
+  &__title
+    display: block
+    margin: 0
+    margin-top: 10px
+    padding: 20px 0
+    font-weight: 700
+    font-size: 32px
+    line-height: 38px
+
+
+app-modal
+  display: none
+
+  .modal
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    z-index: 1000
+    overflow: auto
+
+    .modal-body
+      padding: 5%
+      background: #fff
+      margin: 30%
+
+
+  .modal-background
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    background-color: #000
+    opacity: 0.75
+    z-index: 900
